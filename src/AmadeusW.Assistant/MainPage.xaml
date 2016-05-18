@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="AmadeusW.Assistant.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AmadeusW.Assistant"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <SolidColorBrush x:Key="TranslucentBlackBrush" Color="Black" Opacity="0.3"/>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="20 10"/>
+            <Setter Property="MinWidth" Value="70"/>
+            <Setter Property="MinHeight" Value="70"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="{StaticResource TranslucentBlackBrush}"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+        </Style>
+        <Style TargetType="Viewbox" >
+            <Setter Property="MaxHeight" Value="40" />
+            <Setter Property="MaxWidth" Value="40" />
+        </Style>
+    </Page.Resources>
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <CaptureElement Name="PreviewControl" Stretch="Uniform"/>
+
+        <StackPanel x:Name="IdleControls" HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="0 0 0 90">
+
+            <Button Name="SleepButton" Tapped="SleepButton_Tapped" IsEnabled="False">
+                <Viewbox>
+                    <SymbolIcon Symbol="Cancel"/>
+                </Viewbox>
+            </Button>
+
+            <Button Name="PhotoButton" Tapped="PhotoButton_Tapped" IsEnabled="False">
+                <Viewbox>
+                    <SymbolIcon Symbol="Camera"/>
+                </Viewbox>
+            </Button>
+
+            <Button Name="SwitchCameraButton" Tapped="SwitchCameraButton_Tapped" IsEnabled="False">
+                <Viewbox>
+                    <SymbolIcon Symbol="View"/>
+                </Viewbox>
+            </Button>            
+          
+        </StackPanel>
+
+        <StackPanel x:Name="AnalysisControls" HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal">
+
+            <Button Name="RepeatButton" Tapped="RepeatButton_Tapped" IsEnabled="False">
+                <Viewbox>
+                    <SymbolIcon Symbol="Undo"/>
+                </Viewbox>
+            </Button>
+
+            <Button Name="ShareButton" Tapped="ShareButton_Tapped" IsEnabled="False">
+                <Viewbox>
+                    <SymbolIcon Symbol="Send"/>
+                </Viewbox>
+            </Button>
+
+
+            <Button Name="RefineButton" Tapped="RefineButton_Tapped" IsEnabled="False">
+                <Viewbox>
+                    <SymbolIcon Symbol="Edit"/>
+                </Viewbox>
+            </Button>
+
+        </StackPanel>
+
+    </Grid>
+</Page>
